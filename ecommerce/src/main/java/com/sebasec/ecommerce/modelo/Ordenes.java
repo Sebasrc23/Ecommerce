@@ -16,15 +16,18 @@ public class Ordenes {
     private int id;
     private int usuario_id;
     private LocalDate fechacreacion;
+    private LocalDate fechaRecpcion;
     private int estado;
 
 
-    public Ordenes(int id, int usuario_id, LocalDate fechacreacion, int estado) {
+    public Ordenes(int id, int usuario_id, LocalDate fechacreacion, LocalDate fechaRecpcion, int estado) {
         this.id = id;
         this.usuario_id = usuario_id;
         this.fechacreacion = fechacreacion;
+        this.fechaRecpcion = fechaRecpcion;
         this.estado = estado;
     }
+
 
 
     public int getId() {
@@ -51,6 +54,14 @@ public class Ordenes {
         this.fechacreacion = fechacreacion;
     }
 
+    public LocalDate getFechaRecpcion() {
+        return this.fechaRecpcion;
+    }
+
+    public void setFechaRecpcion(LocalDate fechaRecpcion) {
+        this.fechaRecpcion = fechaRecpcion;
+    }
+
     public int getEstado() {
         return this.estado;
     }
@@ -58,6 +69,19 @@ public class Ordenes {
     public void setEstado(int estado) {
         this.estado = estado;
     }
+
+
+    @Override
+    public String toString() {
+        return "{" +
+            " id='" + getId() + "'" +
+            ", usuario_id='" + getUsuario_id() + "'" +
+            ", fechacreacion='" + getFechacreacion() + "'" +
+            ", fechaRecpcion='" + getFechaRecpcion() + "'" +
+            ", estado='" + getEstado() + "'" +
+            "}";
+    }
+
 
     
 }

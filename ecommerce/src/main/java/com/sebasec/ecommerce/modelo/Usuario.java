@@ -7,8 +7,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table (name = "usuarios")
-public class Usuarios {
+@Table (name = "usuario")
+public class Usuario {
     @Id
     @GeneratedValue (strategy = GenerationType.AUTO)
     private int id;
@@ -17,7 +17,8 @@ public class Usuarios {
     private String Contraseña;
     private int rol;
 
-    public Usuarios(String nombre,String correo,String contraseña,int rol){
+
+    public Usuario(String nombre,String correo,String contraseña,int rol){
         super();
         this.nombre=nombre;
         this.correo=correo;
@@ -66,6 +67,18 @@ public class Usuarios {
 
     public void setRol(int rol) {
         this.rol = rol;
+    }
+
+
+    @Override
+    public String toString() {
+        return "{" +
+            " id='" + getId() + "'" +
+            ", nombre='" + getNombre() + "'" +
+            ", correo='" + getCorreo() + "'" +
+            ", Contraseña='" + getContraseña() + "'" +
+            ", rol='" + getRol() + "'" +
+            "}";
     }
 
 
